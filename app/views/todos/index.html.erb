@@ -1,0 +1,85 @@
+<main class="TodoPageMain">
+        <article>
+            <h1 class="TodoPage-title">My To-do List</h1>
+            <form class="AddTodo" action="/todos" method = "POST">
+                <input class="AddTodo-text" type="text" placeholder="What's next?" name="todo_text">
+                <input class="AddTodo-date" type="date" name="due_date">
+                <input class="AddTodo-button" type="submit" value="Add">
+            </form>
+
+            <%= render partial: "todo-section", locals: {
+                section_title: "Overdue",
+                todos: Todo.overdue
+                } %> 
+            <%= render partial: "todo-section", locals: {
+                section_title: "Due today",
+                todos:Todo.due_today
+                } %> 
+            </article>
+            <%= render partial: "todo-section", locals: {
+                section_title: "Due tomorrow",
+                todos:Todo.due_later
+                } %> 
+            </article>
+            </main>
+               
+                    <%# <li class="TodoItem">
+                    <li class="TodoItem">
+                    <li class="TodoItem">
+                        <div class="TodoItem-Container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            <p class="TodoDetail">Call Accountant</p>
+                            <img class="TodoItem-delete" src="TrashIcon.png">
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="TodoSection">
+                <div class="TodoSectionTitle">
+                    <p class="TodoSectionTitle-text">Due Tomorrow</p>
+                    <p class="TodoSectionTitle-remainingCount">0/3</p>
+                </div>
+                <ul>
+                    <li class="TodoItem">
+                        <div class="TodoItem-Container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            <p class="TodoDetail">Refill Groceries</p>
+                            <img class="TodoItem-delete" src="TrashIcon.png">
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="TodoSection">
+                <div class="TodoSectionTitle">
+                    <p class="TodoSectionTitle-text">Due Later</p>
+                    <p class="TodoSectionTitle-remainingCount">0/3</p>
+                </div>
+                <ul>
+                    <li class="TodoItem">
+                        <div class="TodoItem-Container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            <p class="TodoDetail">Watch Netflix</p>
+                            <p class="TodoDate">Mar 26</p>
+                            <img class="TodoItem-delete" src="TrashIcon.png">
+                        </div>
+                    </li>
+                    <li class="TodoItem">
+                        <div class="TodoItem-Container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            <p class="TodoDetail">Check GC</p>
+                            <p class="TodoDate">Mar 27</p>
+                            <img class="TodoItem-delete" src="TrashIcon.png">
+                        </div>
+                    </li>
+                    <li class="TodoItem">
+                        <div class="TodoItem-Container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            <p class="TodoDetail">Attend Live-Sessions</p>
+                            <p class="TodoDate">Mar 28</p>
+                            <img class="TodoItem-delete" src="TrashIcon.png">
+                        </div> %>
+                    <%# </li>
+                </ul>
+            </section>
+        </article>
+    </main> %>

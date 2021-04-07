@@ -1,0 +1,2 @@
+class Jaiswani < ApplicationRecord
+end

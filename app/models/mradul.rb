@@ -1,0 +1,2 @@
+class Mradul < ApplicationRecord
+end

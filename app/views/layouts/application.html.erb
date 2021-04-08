@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TodoManager</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>My Todo Manager</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
   </head>
 
   <body>
-  <%# <h1>this is my application</h1> %>
+    <% if @current_user %>
+      <p class = "UserHeader">
+        Welcome <%= @current_user.first_name %>!
+        <%= link_to "Sign-out", "/signout", method: "delete" %>
+      </p>
+    <% end %>
+    <% if flash[:error] %>
+      <p class = "Flash-error">
+        <%= flash[:error] %>
+      </p>
+    <% end %>
     <%= yield %>
   </body>
-  <%# <h1>bye guys </h1> %>
 </html>
